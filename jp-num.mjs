@@ -70,7 +70,6 @@ export const parseJpNum = input => {
       while (pos < tokens.length) {
         if (isJpNumChar(tokens[pos])) {
           tokenBuf.push(parseJpNumChar());
-          continue;
         } else if (isJpNumUnitChar(tokens[pos])) {
           const nextUnit = parseJpNumUnitChar();
           if (nextUnit.num > unit.num) {
@@ -79,7 +78,6 @@ export const parseJpNum = input => {
           }
 
           tokenBuf.push(nextUnit);
-          continue;
         }
       }
       
